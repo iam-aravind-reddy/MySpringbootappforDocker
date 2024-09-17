@@ -17,7 +17,7 @@ pipeline{
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t aravinduser12/simpleapp .'
+                    sh 'docker build -t aravind0111/simpleapp .'
                 }
             }
         }
@@ -25,8 +25,8 @@ pipeline{
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]){
-                        sh 'docker login -u aravinduser12 -p ${dockerpwd}'
-                        sh 'docker push aravinduser12/simpleapp'
+                        sh 'docker login -u aravind0111 -p ${dockerpwd}'
+                        sh 'docker push aravind0111/simpleapp'
                     }
                 }
             }
